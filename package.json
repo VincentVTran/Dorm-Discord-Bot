@@ -1,0 +1,24 @@
+{
+  "name": "hotzbot",
+  "version": "1.0.0",
+  "description": "A bot for the dorm's discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentVTran/Hotz_Bot.git"
+  },
+  "keywords": [
+    "Bot",
+    "Dorm",
+    "Discord"
+  ],
+  "author": "Vincent Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VincentVTran/Hotz_Bot/issues"
+  },
+  "homepage": "https://github.com/VincentVTran/Hotz_Bot#readme"
+}
