@@ -7,7 +7,7 @@ const {database} = require('../firebase/database');
 class discordBot{
     constructor(){
         client.once("ready",()=>{
-            console.log('Bot is on');
+            console.log('Hotz Bot is on');
         });
         this.setUpRequest();
         this.setUpDataManagement();
@@ -34,14 +34,23 @@ class discordBot{
                     }
                 });
             }
-        });
+            if(message.content.startsWith("!help")){
+                message.channel.send("Hotz Bot Commands: ");
+                message.channel.send("- To set your room number: Use !set_room [room #]");
+                message.channel.send("- To find a user's room number: Use !get_room @[username]");
+            }
 
-        client.on('message',(message) =>{
             if(message.content.startsWith("!set_room")){
                 //console.log(message.content.split(' ')[1]);
                 try{
-                    this.database.addRoom(message.author.id,message.author.username,message.content.split(' ')[1]);
-                    message.channel.send(message.author.username+"'s room has been set to "+message.content.split(' ')[1]);
+                    const room_number = message.content.split(' ')[1];
+                    if(Number(room_number) === undefined){
+                        message.channel.send("Invalid number")
+                    }
+                    else{
+                        this.database.addRoom(message.author.id,message.author.username,room_number);
+                        message.channel.send(message.author.username+"'s room has been set to "+room_number);
+                    } 
                 }
                 catch(e){
                     console.log(e);
@@ -49,7 +58,6 @@ class discordBot{
                 }
             }
         });
-
         client.login(data.discordKey);
     }
 
