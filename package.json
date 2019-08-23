@@ -4,6 +4,7 @@
   "description": "A bot for the dorm's discord",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/discord/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
