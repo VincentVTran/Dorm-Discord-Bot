@@ -38,6 +38,7 @@ class discordBot{
                 message.channel.send("Hotz Bot Commands: ");
                 message.channel.send("- To set your room number: Use !set_room [room #]");
                 message.channel.send("- To find a user's room number: Use !get_room @[username]");
+                message.channel.send("- More features being worked on.");
             }
 
             if(message.content.startsWith("!set_room")){
